@@ -12,17 +12,6 @@ namespace OOP_DB
     {
         static void Main(string[] args)
         {
-            //MySqlConnection conn = new MySqlConnection("server=localhost; database=library; user=root; password=");
-            //try{
-            //    conn.Open();
-            //    Console.WriteLine("Sikeres csatlakozás!");
-            //}
-            //catch (Exception ex){
-            //    Console.WriteLine($"Csatlakozás sikertelen: {ex.Message}");
-            //}
-            //finally{
-            //    conn?.Close();
-            //}
             Console.WriteLine("Kérem az adatbázis nevét: ");
             string dbName = Console.ReadLine();
             Connect conn = new Connect(dbName);
