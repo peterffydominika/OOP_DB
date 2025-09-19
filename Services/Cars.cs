@@ -9,6 +9,15 @@ namespace OOP_DB.Services
 {
     internal class Cars : ISqlStatements
     {
+        public object getById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object UpdateItem(object updateRecord)
+        {
+            throw new NotImplementedException();
+        }
         public object AddNewItem(object newRecod)
         {
             throw new NotImplementedException();
@@ -41,16 +50,6 @@ namespace OOP_DB.Services
             }
             conn.Connnection.Close();
             return cars;
-        }
-
-        public object getById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object UpdateItem(object updateRecord)
-        {
-            throw new NotImplementedException();
         }
     }
 }

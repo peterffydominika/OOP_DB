@@ -10,7 +10,7 @@ namespace OOP_DB.Services
     {
         List<object> GetAllData(string dbName);
         object getById(int id);
-        object AddNewItem(object newRecod);
+        object AddNewItem(object newRecord);
         object DeleteItem(int id);
         object UpdateItem(object updateRecord);
     }
