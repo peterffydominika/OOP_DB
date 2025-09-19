@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_DB.Services
 {
-    internal interface ILibrary
+    internal interface ISqlStatements
     {
         List<object> GetAllData(string dbName);
     }
