@@ -9,6 +9,16 @@ namespace OOP_DB.Services
 {
     internal class Cars : ISqlStatements
     {
+        public object AddNewItem(object newRecod)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object DeleteItem(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<object> GetAllData(string dbName)
         {
             Connect conn = new Connect(dbName);
@@ -22,15 +32,25 @@ namespace OOP_DB.Services
             {
                 var car = new
                 {
-                    id = dr.GetInt32("id"),
-                    brand = dr.GetString("brand"),
-                    type = dr.GetString("type"),
-                    mDate = dr.GetInt32("mDate")
+                    id = dr.GetBodyDefinition(dr.GetName(0)),
+                    brand = dr.GetBodyDefinition(dr.GetName(1)),
+                    type = dr.GetBodyDefinition(dr.GetName(2)),
+                    mDate = dr.GetBodyDefinition(dr.GetName(3))
                 };
                 cars.Add(car);
             }
             conn.Connnection.Close();
             return cars;
+        }
+
+        public object getById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object UpdateItem(object updateRecord)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,6 +9,16 @@ namespace OOP_DB.Services
 {
     internal class Library : ISqlStatements
     {
+        public object AddNewItem(object newRecod)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object DeleteItem(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<object> GetAllData(string dbName)
         {
             Connect conn = new Connect("library");
@@ -23,16 +33,26 @@ namespace OOP_DB.Services
             {
                 var book = new
                 {
-                    id = dr.GetInt32("id"),
-                    title = dr.GetString("title"),
-                    author = dr.GetString("author"),
-                    releaseDate = dr.GetDateTime("releaseDate")
+                    id = dr.GetBodyDefinition(dr.GetName(0)),
+                    title = dr.GetBodyDefinition(dr.GetName(1)),
+                    author = dr.GetBodyDefinition(dr.GetName(2)),
+                    releaseDate = dr.GetBodyDefinition(dr.GetName(3))
                 };
                 books.Add(book);
             }
 
             conn.Connnection.Close();
             return books;
+        }
+
+        public object getById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object UpdateItem(object updateRecord)
+        {
+            throw new NotImplementedException();
         }
     }
 }
