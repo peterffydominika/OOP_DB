@@ -8,7 +8,7 @@ namespace OOP_DB.Services
     {
         public object getById(int id)
         {
-             Connect conn = new Connect("library");
+            Connect conn = new Connect("library");
 
             conn.Connnection.Open();
 
