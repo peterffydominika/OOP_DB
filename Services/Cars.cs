@@ -51,5 +51,10 @@ namespace OOP_DB.Services
             conn.Connnection.Close();
             return cars;
         }
+
+        public object UpdateItem(int id, object updateRecord)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

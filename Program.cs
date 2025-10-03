@@ -18,11 +18,11 @@ namespace OOP_DB
             ISqlStatements dataBase = new Library();
             Console.Write("Kérem a record id-jét: ");
             int id  = int.Parse(Console.ReadLine());
-            Console.Write("Kérem a record id-jét: ");
+            Console.Write("Kérem a record title-jét: ");
             string title = Console.ReadLine();
-            Console.Write("Kérem a record id-jét: ");
+            Console.Write("Kérem a record author-ját: ");
             string author = Console.ReadLine();
-            Console.Write("Kérem a record id-jét: ");
+            Console.Write("Kérem a record rdate-jét: ");
             string rdate = Console.ReadLine();
             
             var UpdateBook = new
@@ -31,7 +31,7 @@ namespace OOP_DB
                 Author = author,
                 ReleaseDate = rdate
             };
-            dataBase.UpdateItem(id, UpdateBook);
+            Console.WriteLine(dataBase.UpdateItem(id, UpdateBook));
             //Console.Write("Kérem az adatbázis nevét: ");
             //string dbName = Console.ReadLine();
 
