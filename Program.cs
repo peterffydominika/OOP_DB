@@ -13,10 +13,27 @@ namespace OOP_DB
     {
         static void Main(string[] args)
         {
-            Console.Write("Kérem az adatbázis nevét: ");
-            string dbName = Console.ReadLine();
+            
 
             ISqlStatements dataBase = new Library();
+            Console.Write("Kérem a record id-jét: ");
+            int id  = int.Parse(Console.ReadLine());
+            Console.Write("Kérem a record id-jét: ");
+            string title = Console.ReadLine();
+            Console.Write("Kérem a record id-jét: ");
+            string author = Console.ReadLine();
+            Console.Write("Kérem a record id-jét: ");
+            string rdate = Console.ReadLine();
+            
+            var UpdateBook = new
+            {
+                title = title,
+                author = author,
+                releaseDate = rdate
+            };
+            dataBase.UpdateItem(id, UpdateBook);
+            //Console.Write("Kérem az adatbázis nevét: ");
+            //string dbName = Console.ReadLine();
 
             /*foreach (var item in dataBase.GetAllData(dbName))
             {
