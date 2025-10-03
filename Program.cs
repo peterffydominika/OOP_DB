@@ -27,9 +27,9 @@ namespace OOP_DB
             
             var UpdateBook = new
             {
-                title = title,
-                author = author,
-                releaseDate = rdate
+                Title = title,
+                Author = author,
+                ReleaseDate = rdate
             };
             dataBase.UpdateItem(id, UpdateBook);
             //Console.Write("Kérem az adatbázis nevét: ");
