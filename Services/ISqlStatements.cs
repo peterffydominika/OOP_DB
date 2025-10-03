@@ -12,6 +12,6 @@ namespace OOP_DB.Services
         object getById(int id);
         object AddNewItem(object newRecord);
         object DeleteItem(int id);
-        object UpdateItem(object updateRecord);
+        object UpdateItem(int id, object updateRecord);
     }
 }

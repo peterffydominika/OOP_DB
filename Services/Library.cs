@@ -35,9 +35,24 @@ namespace OOP_DB.Services
             return record;
         }
 
-        public object UpdateItem(object updateRecord)
+        public object UpdateItem(int id, object updateRecord)
         {
-            throw new NotImplementedException();
+            Connect conn = new Connect("library");
+            conn.Connnection.Open();
+            
+            string sql = "UPDATE `books` SET `title`='@title',`author`='@author',`releaseDate`='@rdate' WHERE `id`=@id";
+            var record = updateRecord.GetType().GetProperties();
+            MySqlCommand cmd = new MySqlCommand(sql, conn.Connnection);
+
+            cmd.Parameters.AddWithValue("@title", record[0].GetValue(updateRecord));
+            cmd.Parameters.AddWithValue("@author", record[1].GetValue(updateRecord));
+            cmd.Parameters.AddWithValue("@rdate", record[2].GetValue(updateRecord));
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Connnection.Close();
+            return new { message = "Sikeres módosítás." };
         }
         public object AddNewItem(object newRecord)
         {
